@@ -1,6 +1,6 @@
 package br.dev.matheus.OSApiApplication.api.controller;
 
-import br.dev.matheus.OSApiApplication.domain.exception.domain.service.ClienteService;
+import br.dev.matheus.OSApiApplication.domain.service.ClienteService;
 import br.dev.matheus.OSApiApplication.domain.model.Cliente;
 import br.dev.matheus.OSApiApplication.domain.repository.ClienteRepository;
 import jakarta.validation.Valid;

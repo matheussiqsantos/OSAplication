@@ -1,4 +1,4 @@
-package br.dev.matheus.OSApiApplication.domain.exception.domain.service;
+package br.dev.matheus.OSApiApplication.domain.service;
 
 import br.dev.matheus.OSApiApplication.domain.exception.DomainException;
 import br.dev.matheus.OSApiApplication.domain.model.Cliente;
