@@ -55,5 +55,4 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         
         return handleExceptionInternal(ex, problema, new HttpHeaders(), status, request);
     }
-
 }

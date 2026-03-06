@@ -15,10 +15,6 @@ import java.util.Objects;
 
 @Entity
 public class OrdemServico {
-
-    public static List<Cliente> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
