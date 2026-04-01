@@ -1,6 +1,6 @@
-
 package br.dev.matheus.OSApiApplication.domain.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -17,33 +17,34 @@ import java.util.Objects;
 
 @Entity
 public class OrdemServico {
-    
+
+    @Schema(description = "ID único da Ordem de Serviço", example = "1")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    @Schema(description = "Cliente associado à ordem de serviço")
     @ManyToOne
     private Cliente cliente;
-    
+
+    @Schema(description = "Descrição detalhada do problema ou serviço", example = "Troca de tela de notebook Dell")
     private String descricao;
+
+    @Schema(description = "Preço do serviço", example = "250.00")
     private BigDecimal preco;
-    
+
+    @Schema(description = "Lista de comentários registrados na ordem de serviço", accessMode = Schema.AccessMode.READ_ONLY)
     @OneToMany(mappedBy = "ordemServico")
     private List<Comentario> comentarios = new ArrayList<>();
 
-    public List<Comentario> getComentarios() {
-        return comentarios;
-    }
-
-    public void setComentarios(List<Comentario> comentarios) {
-        this.comentarios = comentarios;
-    }
-
-    
+    @Schema(description = "Status atual da ordem", example = "ABERTA")
     @Enumerated(EnumType.STRING)
     private StatusOrdemServico status;
-    
+
+    @Schema(description = "Data e hora de abertura", example = "2024-05-20T10:30:00", accessMode = Schema.AccessMode.READ_ONLY)
     private LocalDateTime dataAbertura;
+
+    @Schema(description = "Data e hora de finalização", example = "2024-05-21T15:00:00", accessMode = Schema.AccessMode.READ_ONLY)
     private LocalDateTime dataFinalizacao;
     
     public OrdemServico() {

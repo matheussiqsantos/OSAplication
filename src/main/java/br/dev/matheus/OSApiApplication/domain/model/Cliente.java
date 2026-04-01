@@ -1,5 +1,6 @@
 package br.dev.matheus.OSApiApplication.domain.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,19 +13,23 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 public class Cliente {
     
+    @Schema(name = "ID do cliente", example = "1", required = true)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
+    @Schema(name = "Nome do cliente", example = "klein", required = true)
     @NotBlank
     @Size(max = 60)
     private String nome;
     
+    @Schema(name = "Email do cliente", example = "klein@gmail.com", required = true)
     @NotBlank
     @Email
     @Size(max = 255)
     private String email;
     
+    @Schema(name = "Telefone do cliente", example = "+5512903245423", required = false)
     @NotBlank
     @Size(max = 20)
     @Column (name = "telefone")
